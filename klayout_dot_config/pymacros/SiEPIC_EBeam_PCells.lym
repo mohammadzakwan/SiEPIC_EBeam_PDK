@@ -30,7 +30,7 @@ PCells:
 
 1) Double-bus ring resonator
 class TestStruct_DoubleBus_Ring
-class DoubleBus_Ringserier
+class DoubleBus_Ring
 def layout_Ring(cell, layer, x, y, r, w, npoints):
 
 2) Waveguide Taper
