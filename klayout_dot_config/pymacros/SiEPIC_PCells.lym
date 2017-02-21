@@ -15,13 +15,13 @@
  <interpreter>python</interpreter>
  <dsl-interpreter-name/>
  <text># Python script
-# SiEPIC_EBeam_PCells
+# SiEPIC_PCells
 
 """
-This file is part of the SiEPIC_EBeam_PDK
+This file is part of the SiEPIC_PDK
 by Lukas Chrostowski (c) 2015
 
-This Python file implements a library called "SiEPIC_EBeam_PCells" 
+This Python file implements a library called "SiEPIC_PCells" 
 
 
 *******
@@ -2673,10 +2673,10 @@ class SiEPIC(pya.Library):
 
   def __init__(self):
 
-    print("Initializing SiEPIC EBeam PCells library.")
+    print("Initializing SiEPIC PCells library.")
   
     # Set the description
-    self.description = "EBeam PCells"
+    self.description = "SiEPIC General" 
     
     # Create the PCell declarations
     self.layout().register_pcell("DirectionalCoupler_HalfRing_Straight", DirectionalCoupler_HalfRing_Straight())
@@ -2698,9 +2698,9 @@ class SiEPIC(pya.Library):
     self.layout().register_pcell("DirectionalCoupler_SeriesRings", DirectionalCoupler_SeriesRings())
     self.layout().register_pcell("waveguide_bump", waveguide_bump())
     
-    # Register us with the name "SiEPIC_EBeam_PCells".
+    # Register us with the name "SiEPIC".
     # If a library with that name already existed, it will be replaced then.
-    self.register("SiEPIC-EBeam PCells")
+    self.register("SiEPIC")
  
 # Instantiate and register the library
 SiEPIC()
