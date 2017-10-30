@@ -3173,7 +3173,7 @@ class DirectionalCoupler_SeriesRings(pya.PCellDeclarationHelper):
 
   def display_text_impl(self):
     # Provide a descriptive text for the cell
-    return "DirectionalCoupler_SeriesRings(R1=" + ('%.3f' % self.r1)+ ",R2=" + ('%.3f' % self.r2) + ",g=" + ('%g' % (1000*self.g)) + ")"
+    return "DirectionalCoupler_SeriesRings(R1=" + ('%.3f' % self.r1)+ ",R2=" + ('%.3f' % self.r2) + ",g=" + ('%g' % (1000*self.g)) + ",Lc=" + ('%.3f' % (self.Lc)) + ")"
 
   def can_create_from_shape_impl(self):
     return False
@@ -3275,11 +3275,11 @@ class DirectionalCoupler_SeriesRings(pya.PCellDeclarationHelper):
     shape.text_size =  r*0.017
     t = Trans(((r1+r2)/2)/4, ((r1+r2)/2)/2)
   #  text = Text ('Spice_param:wg_width=%.3fu gap="%s" radius="%s"'% ( w, g,int( r)), t)
-    text = Text ('Spice_param:wg_width=%.3fu gap=%.3fu radius1=%.3fu radius2=%.3fu'% ( self.w, self.g,int( self.r1), int(self.r2)), t)
+    text = Text ('Spice_param:wg_width=%.3fu gap=%.3fu radius1=%.3fu radius2=%.3fu Lc=%.3fu'% ( self.w, self.g,int( self.r1), int(self.r2),self.Lc), t)
     shape = shapes(LayerDevRecN).insert(text)
     shape.text_size =  r*0.017
 
-    print("Done drawing the layout for - DirectionalCoupler_SeriesRings: %.3f-%.3f-%g" % ( self.r1, self.r2, self.g) )
+    print("Done drawing the layout for - DirectionalCoupler_SeriesRings: %.3f-%.3f-%g-%.3f" % ( self.r1, self.r2, self.g, self.Lc) )
 
 
 
